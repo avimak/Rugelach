@@ -2,13 +2,11 @@
 
 The browser extension that'll put some love in your tummy
 (or at least will make your Haaretz reading much tastier)
+<br/>
 
-
-Noticed a bug? Open an issue.
-
-
-
-
+#####[Installation](https://github.com/yuvadm/free-haaretz#install)
+<small>Noticed a bug? Open an issue.</small>
+<br/><br/>
 
 ## License
 
