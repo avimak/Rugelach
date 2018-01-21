@@ -1,15 +1,12 @@
 {
   "name": "Rugelach",
   "version": "0.0.1",
-  "manifest_version": 1,
+  "manifest_version": 2,
   "description": "because sometimes you just need a delicious Rugelach to bright up your page",
   "homepage_url": "https://github.com/avimak/Rugelach",
-  "background": {
-    "scripts": ["oven.js"],
-    "persistent": true
-  },
   "content_scripts": [{
-    "matches": ["*://*.haaretz.co.il/*"]
+    "matches": ["*://*.haaretz.co.il/*"],
+    "js": ["oven.js"]
   }],
   "permissions": [
     "*://*.haaretz.co.il/",
