@@ -1,3 +1,11 @@
+const lookupWriter = /(rogel alpher|רוגל אלפר)/i;
+
+const altTitle = 'Yummy!';
+const altName = 'Rugelach';
+const altImg = 'https://github.com/avimak/Rugelach/blob/master/rugelach_sq.jpg?raw=true';
+const altLink = 'https://www.google.co.il/search?q=Rugelach';
+const altText = 'i\'ve got love in my tummy';
+
 function replace(el, type, name, key, val) {
     var res = null;
     if (type === 'tag') {
@@ -43,18 +51,31 @@ function setImgSize(el, size) {
 }
 
 [].forEach.call(document.getElementsByTagName("article"), function (el) {
-    if (/(rogel alpher|רוגל אלפר)/i.test(el.innerText)) {
+    if (lookupWriter.test(el.innerText)) {
         var imgSize = getImgSize(el);
 
-        replace(el, 'tag', 'a', 'href', 'https://www.google.co.il/search?q=Rugelach');
-        replace(el, 'tag', 'img', 'src', 'https://github.com/avimak/Rugelach/blob/master/rugelach_sq.jpg?raw=true');
-        replace(el, 'tag', 'img', 'data-src', 'https://github.com/avimak/Rugelach/blob/master/rugelach_sq.jpg?raw=true');
-        replace(el, 'tag', 'address', null, 'Rugelach');
-        replace(el, 'class', 't-address', null, 'Rugelach');
-        replace(el, 'class', 't-zeta', null, 'Yummy!');
-        replace(el, 'class', 'mh__teaser__h', null, 'Yummy!');
-        replace(el, 'class', 'h-ellipsis t-epsilon--2lines h-mb--xxtight', null, 'Yummy!');
+        replace(el, 'tag', 'a', 'href', altLink);
+        replace(el, 'tag', 'img', 'src', altImg);
+        replace(el, 'tag', 'img', 'data-src', altImg);
+        replace(el, 'tag', 'source', 'srcset', altImg);
+        replace(el, 'tag', 'address', null, altName);
+        replace(el, 'class', 't-address', null, altName);
+        replace(el, 'class', 't-zeta', null, altTitle);
+        replace(el, 'class', 'mh__teaser__h', null, altTitle);
+        replace(el, 'class', 't-epsilon', null, altTitle);
+        replace(el, 'class', 't-epsilon--2lines', null, altTitle);
+        replace(el, 'class', 't-milli', null, altText);
 
+        setImgSize(el, imgSize);
+    }
+});
+
+[].forEach.call(document.getElementsByTagName("figure"), function (el) {
+    if (lookupWriter.test(el.parentElement.innerText)) {
+        replace(el.parentElement, 'class', 't-epsilon', null, altName);
+
+        var imgSize = getImgSize(el);
+        replace(el, 'tag', 'img', 'src', altImg);
         setImgSize(el, imgSize);
     }
 });
