@@ -47,8 +47,8 @@ function setImgSize(el, size) {
         var imgSize = getImgSize(el);
 
         replace(el, 'tag', 'a', 'href', 'https://www.google.co.il/search?q=Rugelach');
-        replace(el, 'tag', 'img', 'src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/%D7%A8%D7%95%D7%92%D7%9C%D7%9A.jpg/320px-%D7%A8%D7%95%D7%92%D7%9C%D7%9A.jpg');
-        replace(el, 'tag', 'img', 'data-src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/%D7%A8%D7%95%D7%92%D7%9C%D7%9A.jpg/320px-%D7%A8%D7%95%D7%92%D7%9C%D7%9A.jpg');
+        replace(el, 'tag', 'img', 'src', 'https://github.com/avimak/Rugelach/blob/master/rugelach_sq.jpg?raw=true');
+        replace(el, 'tag', 'img', 'data-src', 'https://github.com/avimak/Rugelach/blob/master/rugelach_sq.jpg?raw=true');
         replace(el, 'tag', 'address', null, 'Rugelach');
         replace(el, 'class', 't-address', null, 'Rugelach');
         replace(el, 'class', 't-zeta', null, 'Yummy!');
